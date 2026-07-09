@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"mcd-clone/cli"
+)
 
 func main() {
-	fmt.Println("WORLD HELLO")
+	cli.HomeMenu(0)
 }

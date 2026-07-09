@@ -1,0 +1,86 @@
+[
+   {
+      "id":"1che",
+      "name":"Cheese Burger",
+      "price":35000,
+      "cat":{"id":"1fo", "name": "food"},
+      "isPromo":1
+   },
+   {
+      "id":"2na",
+      "name":"Nasi Uduk McD",
+      "price":22000,
+			"stocks":21,
+      "cat":{"id":"1fo", "name": "food"},
+      "isPromo":0
+   },
+   {
+      "id":"3fi",
+      "name":"Fish Fillet Burger",
+      "price":34000,
+			"stocks":121,
+     	"cat":{"id":"1fo", "name": "food"},
+      "isPromo":0
+   },
+   {
+      "id":"4do",
+      "name":"Double Cheese Burger",
+      "price":34000,
+			"stocks":31,
+      "cat":{"id":"1fo", "name": "food"},
+      "isPromo":0
+   },
+   {
+      "id":"5be",
+      "name":"Beef Burger Deluxe",
+      "price":29500,
+			"stocks":10,
+      "cat":{"id":"1fo", "name": "food"},
+      "isPromo":0
+   },
+   {
+      "id":"6frr",
+      "name":"French Fries",
+			"stocks":65,
+      "size":"Reguler",
+			"price":14000,
+      "cat":{"id":"1fo", "name": "food"},
+      "isPromo":0
+   },
+	{
+      "id":"6frm",
+      "name":"French Fries",
+			"stocks":65,
+      "size":"Medium",
+			"price":22000,
+      "cat":{"id":"1fo", "name": "food"},
+      "isPromo":0
+   },
+	{
+      "id":"6frl",
+      "name":"French Fries",
+			"stocks":65,
+      "size":"Large",
+			"price":29500,
+      "cat":{"id":"1fo", "name": "food"},
+      "isPromo":0
+   },
+   {
+      "id":"7na",
+      "name":"Nasi",
+			"stocks":41,
+      "size":"Medium",
+			"price":10000,
+      "cat":{"id":"1fo", "name": "food"},
+      "isPromo":0
+   },
+	{
+      "id":"7na",
+      "name":"Nasi",
+			"stocks":41,
+      "size": "Large",
+			"price":13500,
+      "cat":{"id":"1fo", "name": "food"},
+      "isPromo":0
+   }
+]

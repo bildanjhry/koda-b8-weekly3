@@ -1,0 +1,29 @@
+{
+ "products": [
+  {
+   "id": "2na",
+   "name": "Nasi Uduk McD",
+   "price": 22000,
+   "cat": {
+    "id": "1fo",
+    "name": "food"
+   },
+   "qty": 2,
+   "size": "",
+   "isPromo": 0
+  },
+  {
+   "id": "2na",
+   "name": "Nasi Uduk McD",
+   "price": 22000,
+   "cat": {
+    "id": "1fo",
+    "name": "food"
+   },
+   "qty": 1,
+   "size": "",
+   "isPromo": 0
+  }
+ ],
+ "total": 1476500
+}

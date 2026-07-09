@@ -65,5 +65,8 @@ func ConfirmOrder(items *models.Items, ItemList *[]models.Items) {
 	case "n":
 		utils.ClearTerm(0, "")
 		HomeMenu(1)
+	default:
+		utils.ClearTerm(1, "* WORKING_ON_PROGRESS *")
+		ConfirmOrder(items, ItemList)
 	}
 }

@@ -20,5 +20,8 @@ func Checkout() {
 	case "2":
 		utils.ClearTerm(0, "")
 		HomeMenu(1)
+	default:
+		utils.ClearTerm(1, "* WORKING_ON_PROGRESS *")
+		Checkout()
 	}
 }

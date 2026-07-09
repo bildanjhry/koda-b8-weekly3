@@ -13,7 +13,7 @@ func AskingItems(Items *[]models.Items) {
 
 	fmt.Printf("Silahkan Pilih Item :\n\n")
 	dis.ItemList(Items)
-	fmt.Printf("[X/0] Keluar\n")
+	fmt.Printf("[ X/0 ] Keluar\n")
 	res, _ := utils.Io("\nMasukan Input: ")
 
 	for x, val := range *Items {
@@ -30,6 +30,9 @@ func AskingItems(Items *[]models.Items) {
 	case "0":
 		utils.ClearTerm(0, "")
 		HomeMenu(0)
+	default:
+		utils.ClearTerm(1, "* WORKING_ON_PROGRESS *")
+		AskingItems(Items)
 	}
 
 }

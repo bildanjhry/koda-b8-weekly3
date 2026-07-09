@@ -12,5 +12,8 @@ func AskingPayment() {
 	if val == "1" {
 		utils.ClearTerm(0, "")
 		SuccessOrder()
+	} else {
+		utils.ClearTerm(1, "* WORKING_ON_PROGRESS *")
+		AskingPayment()
 	}
 }

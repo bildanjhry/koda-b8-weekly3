@@ -60,7 +60,7 @@ func (u Display) Checkout(Items *models.Cart) {
 		}
 		fmt.Printf("\nRp%d\n", val.Price)
 	}
-	fmt.Printf("Total: Rp.%d\n: ", Items.Total)
+	fmt.Printf("\nTotal: Rp.%d\n\n", Items.Total)
 
 	fmt.Println("=======================================")
 }

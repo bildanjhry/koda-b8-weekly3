@@ -7,13 +7,6 @@ import (
 
 type Display struct{}
 
-type Printing interface {
-	HomeList(Status int)
-	ItemList(Items *[]models.Items)
-	CartList(Cart *[]models.Cart)
-	Chekout(Items *models.Cart)
-}
-
 func (u Display) HomeList(Status int) {
 	if x := Status; x == 0 {
 		fmt.Println("=======================================")
@@ -69,4 +62,17 @@ func (U Display) Success() {
 	fmt.Println("=======================================")
 	fmt.Printf("\nTERIMAKASIH\n\n")
 	fmt.Println("=======================================")
+}
+
+func (u Display) OrderList(Items *[]models.ItemsCheckout) {
+	fmt.Printf("Pesanan Anda:\n\n")
+	for x, val := range *Items {
+		fmt.Printf("%d. %s", x+1, val.Name)
+		if val.Size != "" {
+			fmt.Printf(" (%s)", val.Size)
+		}
+		fmt.Printf(" %dx\n", val.Qty)
+	}
+	fmt.Printf("\n================================\n")
+	fmt.Println("(Y/N) Ada lagi?")
 }

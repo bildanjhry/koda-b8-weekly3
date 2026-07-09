@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"mcd-clone/models"
 	"mcd-clone/services"
+	"mcd-clone/ui"
 	"mcd-clone/utils"
 	"os"
 )
@@ -12,6 +13,7 @@ import (
 func ConfirmOrder(items *models.Items, ItemList *[]models.Items) {
 
 	myCart, err := services.GetDataCart()
+	dis := ui.Display{}
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -49,21 +51,12 @@ func ConfirmOrder(items *models.Items, ItemList *[]models.Items) {
 		panic(err.Error())
 	}
 
-	err = os.WriteFile("data/cart.json", data, 0644)
+	err = os.WriteFile("./data/cart.json", data, 0644)
 	if err != nil {
 		panic(err.Error())
 	}
 
-	fmt.Printf("Pesanan Anda:\n\n")
-	for x, val := range myCart.Products {
-		fmt.Printf("%d. %s", x+1, val.Name)
-		if val.Size != "" {
-			fmt.Printf(" (%s)", val.Size)
-		}
-		fmt.Printf(" %dx\n", val.Qty)
-	}
-	fmt.Printf("\n================================\n")
-	fmt.Println("(Y/N) Ada lagi?")
+	dis.OrderList(&myCart.Products)
 	res, _ := utils.Io("\nMasukan Input: ")
 	switch res {
 	case "y":

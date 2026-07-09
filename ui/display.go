@@ -54,7 +54,7 @@ func (u Display) CartList(Carts *[]models.Cart) {
 
 func (u Display) Checkout(Items *models.Cart) {
 	for x, val := range Items.Products {
-		fmt.Printf("%d. %s ", x+1, val.Name)
+		fmt.Printf("%d. %s %dx", x+1, val.Name, val.Qty)
 		if val.Size != "" {
 			fmt.Printf(" (%s) ", val.Size)
 		}

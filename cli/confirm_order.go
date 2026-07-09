@@ -33,13 +33,8 @@ func ConfirmOrder(items *models.Items, ItemList *[]models.Items) {
 	}()
 
 	oldVal := myCart.Products[:0]
-
-	fmt.Println(items.Id)
-
 	for _, val := range myCart.Products {
-		fmt.Println(val.Id)
 		if val.Id == items.Id {
-			fmt.Println("FOUND")
 			val.Qty += 1
 			myCart.Products = append(oldVal, val)
 			break
@@ -59,17 +54,17 @@ func ConfirmOrder(items *models.Items, ItemList *[]models.Items) {
 		panic(err.Error())
 	}
 
-	fmt.Println("================================")
+	fmt.Printf("Pesanan Anda:\n\n")
 	for x, val := range myCart.Products {
 		fmt.Printf("%d. %s", x+1, val.Name)
 		if val.Size != "" {
-			fmt.Printf("(%s) ", val.Size)
-
+			fmt.Printf(" (%s)", val.Size)
 		}
-		fmt.Printf("%dx\n", val.Qty)
+		fmt.Printf(" %dx\n", val.Qty)
 	}
-	fmt.Println("\n(Y/N) Ada lagi?")
-	res, _ := utils.Io("Masukan Perintah: ")
+	fmt.Printf("\n================================\n")
+	fmt.Println("(Y/N) Ada lagi?")
+	res, _ := utils.Io("\nMasukan Input: ")
 	switch res {
 	case "y":
 		utils.ClearTerm(0, "")

@@ -68,6 +68,24 @@ func (U Display) Success() {
 	fmt.Println("=======================================")
 }
 
+func (U Display) Struct(Items *models.Cart) {
+	fmt.Println("=======================================")
+	fmt.Printf("             McDonalds\n")
+	fmt.Printf("=======================================\n\n")
+	for x, val := range Items.Products {
+		fmt.Printf("%d. %s %dx", x+1, val.Name, val.Qty)
+		if val.Size != "" {
+			fmt.Printf(", %s ", val.Size)
+		}
+		fmt.Printf("\n   Rp%d\n", val.Price)
+	}
+	fmt.Printf("\nTotal: Rp.%d\n\n", Items.Total)
+	fmt.Println("=======================================")
+	fmt.Printf("            TERIMAKASIH\n")
+	fmt.Printf("=======================================\n\n")
+
+}
+
 func (u Display) OrderList(Items *[]models.ItemsCheckout) {
 	fmt.Printf("Pesanan Anda:\n\n")
 	for x, val := range *Items {

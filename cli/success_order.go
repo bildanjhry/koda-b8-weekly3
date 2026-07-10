@@ -2,6 +2,7 @@ package cli
 
 import (
 	"fmt"
+	"mcd-clone/services"
 	"mcd-clone/ui"
 	"mcd-clone/utils"
 	"os"
@@ -9,7 +10,8 @@ import (
 
 func SuccessOrder() {
 	dis := ui.Display{}
-	dis.Success()
+	data, _ := services.GetDataCart()
+	dis.Struct(&data)
 
 	defer func() {
 		if x := recover(); x != nil {

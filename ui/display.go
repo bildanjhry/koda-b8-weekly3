@@ -10,12 +10,12 @@ type Display struct{}
 func (u Display) HomeList(Status int) {
 	if x := Status; x == 0 {
 		fmt.Println("=======================================")
-		fmt.Println("SELAMAT DATANG DI MC DONALDS")
+		fmt.Println("     SELAMAT DATANG DI MCDONALDS")
 		fmt.Println("=======================================")
 	} else {
 		fmt.Printf("Home Menu :\n")
 	}
-	fmt.Printf("\n1. Foods\n2. Drinks\n3. Snacks\n4. Dessert\n5. Paket\n6. Happy Meal\n\n")
+	fmt.Printf("\n 1. Foods\n 2. Drinks\n 3. Snacks\n 4. Dessert\n 5. Paket\n 6. Happy Meal\n\n")
 	fmt.Println("=======================================")
 	if x := Status; x == 1 {
 		fmt.Printf("7. Checkout\n")

@@ -21,7 +21,7 @@ func Checkout() {
 		utils.ClearTerm(0, "")
 		HomeMenu(1)
 	default:
-		utils.ClearTerm(1, "* WORKING_ON_PROGRESS *")
+		utils.ClearTerm(1, "* INVALID_INPUT *")
 		Checkout()
 	}
 }

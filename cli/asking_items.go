@@ -30,7 +30,7 @@ func AskingItems(Items *[]models.Items) {
 		utils.ClearTerm(0, "")
 		HomeMenu(0)
 	default:
-		utils.ClearTerm(1, "* WORKING_ON_PROGRESS *")
+		utils.ClearTerm(1, "* INVALID_INPUT *")
 		AskingItems(Items)
 	}
 

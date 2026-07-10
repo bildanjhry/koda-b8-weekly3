@@ -34,14 +34,14 @@ func ConfirmOrder(items *models.Items, ItemList *[]models.Items) {
 		}
 	}()
 
-	oldVal := myCart.Products[:0]
-	for _, val := range myCart.Products {
-		if val.Id == items.Id {
-			val.Qty += 1
-			myCart.Products = append(oldVal, val)
-			break
-		}
-	}
+	// oldVal := myCart.Products[:0]
+	// for _, val := range myCart.Products {
+	// 	if val.Id == items.Id {
+	// 		val.Qty += 1
+	// 		myCart.Products = append(oldVal, val)
+	// 		break
+	// 	}
+	// }
 
 	myCart.Products = append(myCart.Products, form)
 	myCart.Total += items.Price
@@ -66,7 +66,7 @@ func ConfirmOrder(items *models.Items, ItemList *[]models.Items) {
 		utils.ClearTerm(0, "")
 		HomeMenu(1)
 	default:
-		utils.ClearTerm(1, "* WORKING_ON_PROGRESS *")
+		utils.ClearTerm(1, "* INVALID_INPUT *")
 		ConfirmOrder(items, ItemList)
 	}
 }

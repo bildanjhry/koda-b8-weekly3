@@ -13,7 +13,7 @@ func AskingPayment() {
 		utils.ClearTerm(0, "")
 		SuccessOrder()
 	} else {
-		utils.ClearTerm(1, "* WORKING_ON_PROGRESS *")
+		utils.ClearTerm(1, "* INVALID_INPUT *")
 		AskingPayment()
 	}
 }

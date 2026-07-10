@@ -33,7 +33,7 @@ func SuccessOrder() {
 		utils.ClearTerm(0, "")
 		os.Exit(0)
 	default:
-		utils.ClearTerm(1, "* WORKING_ON_PROGRESS *")
+		utils.ClearTerm(1, "* INVALID_INPUT *")
 		SuccessOrder()
 	}
 }

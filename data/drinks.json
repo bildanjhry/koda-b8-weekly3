@@ -1,0 +1,105 @@
+[
+  {
+    "id": "1ce",
+    "name": "Iced Coffee",
+    "cat": {
+      "id": "2dr",
+      "name": "drink"
+    },
+    "price": 14000,
+    "stocks":31,
+    "isPromo": 1
+  },
+  {
+    "id": "2co",
+    "name": "Coke Float",
+    "cat": {
+      "id": "2dr",
+      "name": "drink"
+    },
+    "size": "Reguler",
+    "price": 13000,
+    "stocks":19,
+    "isPromo": 0
+  },
+  {
+    "id": "3fa",
+    "name": "Fanta",
+    "cat": {
+      "id": "2dr",
+      "name": "drink"
+    },
+    "size": "Reguler",
+    "price":13000,
+    "stocks":91,
+    "isPromo": 0
+  },
+  {
+    "id": "4ic",
+    "name": "Iced Lychee Tea",
+    "cat": {
+      "id": "2dr",
+      "name": "drink"
+    },
+    "price": 22000,
+    "isPromo": 0
+  },
+  {
+    "id": "5te",
+    "name": "Tehbotol Kotak",
+    "cat": {
+      "id": "2dr",
+      "name": "drink"
+    },
+    "price": 12000,
+    "stocks":31,
+    "isPromo": 0
+  },
+  {
+    "id": "6fr",
+    "name": "Fruit Tea Lemon",
+    "cat": {
+      "id": "2dr",
+      "name": "drink"
+    },
+    "size": "Small",
+    "price": 11000,
+    "stocks":55,
+    "isPromo": 0
+  },
+  {
+    "id": "7co",
+    "name": "Coca-cola",
+    "cat": {
+      "id": "2dr",
+      "name": "drink"
+    },
+    "size": "Large",
+    "price": 15000, 
+    "stocks":41,
+    "isPromo": 0
+  },
+  {
+    "id": "d8",
+    "name": "Sprite",
+    "cat": {
+      "id": "2dr",
+      "name": "drink"
+    },
+    "size": "Reguler",
+    "price": 13000,
+    "stocks":11,
+    "isPromo": 0
+  },
+  {
+    "id": "9ho",
+    "name": "Hot Coffee",
+    "cat": {
+      "id": "2dr",
+      "name": "drink"
+    },
+    "price": 13000,
+    "stocks":21,
+    "isPromo": 0
+  }
+]

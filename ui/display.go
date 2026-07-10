@@ -15,7 +15,7 @@ func (u Display) HomeList(Status int) {
 	} else {
 		fmt.Printf("Home Menu :\n")
 	}
-	fmt.Printf("\n 1. Foods\n 2. Drinks\n 3. Snacks\n 4. Dessert\n 5. Paket\n 6. Happy Meal\n\n")
+	fmt.Printf("\n(1) Foods\n(2) Drinks\n(3) Snacks\n(4) Dessert\n(5) Paket\n(6) Happy Meal\n\n")
 	fmt.Println("=======================================")
 	if x := Status; x == 1 {
 		fmt.Printf(" 7. Checkout\n")

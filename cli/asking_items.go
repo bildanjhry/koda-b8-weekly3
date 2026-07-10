@@ -13,7 +13,6 @@ func AskingItems(Items *[]models.Items) {
 
 	fmt.Printf("Silahkan Pilih Item :\n\n")
 	dis.ItemList(Items)
-	fmt.Printf("[ X/0 ] Keluar\n")
 	res, _ := utils.Io("\nMasukan Input: ")
 
 	for x, val := range *Items {

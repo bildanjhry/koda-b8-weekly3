@@ -4,6 +4,7 @@ import (
 	"mcd-clone/services"
 	"mcd-clone/ui"
 	"mcd-clone/utils"
+	"os"
 )
 
 func AskingHome(past int) string {
@@ -22,6 +23,9 @@ func HomeMenu(past int) {
 	case "7":
 		utils.ClearTerm(0, "")
 		Checkout()
+	case "x":
+		utils.ClearTerm(0, "Sampai Jumpa")
+		os.Exit(0)
 	default:
 		utils.ClearTerm(1, "* WORKING_ON_PROGRESS *")
 		HomeMenu(0)

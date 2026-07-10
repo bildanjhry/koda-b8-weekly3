@@ -19,19 +19,22 @@ func (u Display) HomeList(Status int) {
 	fmt.Println("=======================================")
 	if x := Status; x == 1 {
 		fmt.Printf("7. Checkout\n")
+	} else {
+		fmt.Printf("(X) Keluar\n")
 	}
 }
 
 func (u Display) ItemList(Items *[]models.Items) {
 	for x, val := range *Items {
-		fmt.Printf("%d. %s ", x+1, val.Name)
+		fmt.Printf("%d. %s", x+1, val.Name)
 		if val.Size != "" {
-			fmt.Printf("(%s)", val.Size)
+			fmt.Printf(", %s ", val.Size)
 		}
-		fmt.Printf("\nRp%d\n\n", val.Price)
+		fmt.Printf("\n   Rp%d\n\n", val.Price)
 	}
 
 	fmt.Println("=======================================")
+	fmt.Printf("0. Kembali\n")
 }
 
 func (u Display) CartList(Carts *[]models.Cart) {
@@ -46,12 +49,13 @@ func (u Display) CartList(Carts *[]models.Cart) {
 }
 
 func (u Display) Checkout(Items *models.Cart) {
+	fmt.Printf("Keranjang :\n\n")
 	for x, val := range Items.Products {
 		fmt.Printf("%d. %s %dx", x+1, val.Name, val.Qty)
 		if val.Size != "" {
-			fmt.Printf(" (%s) ", val.Size)
+			fmt.Printf(", %s ", val.Size)
 		}
-		fmt.Printf("\nRp%d\n", val.Price)
+		fmt.Printf("\n   Rp%d\n", val.Price)
 	}
 	fmt.Printf("\nTotal: Rp.%d\n\n", Items.Total)
 
@@ -69,7 +73,7 @@ func (u Display) OrderList(Items *[]models.ItemsCheckout) {
 	for x, val := range *Items {
 		fmt.Printf("%d. %s", x+1, val.Name)
 		if val.Size != "" {
-			fmt.Printf(" (%s)", val.Size)
+			fmt.Printf(", %s ", val.Size)
 		}
 		fmt.Printf(" %dx\n", val.Qty)
 	}

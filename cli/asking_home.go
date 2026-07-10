@@ -10,6 +10,7 @@ import (
 )
 
 func AskingHome(past int) string {
+	utils.ClearTerm(0, "")
 	dis := ui.Display{}
 	dis.HomeList(past)
 	res, _ := utils.Io("\nMasukan Input: ")

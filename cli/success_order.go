@@ -8,10 +8,14 @@ import (
 	"os"
 )
 
-func SuccessOrder() {
+func SuccessOrder(value *string) {
 	dis := ui.Display{}
 	data, _ := services.GetDataCart()
-	dis.Struct(&data)
+	if *value == "1" {
+		dis.Struct(&data)
+	} else {
+		dis.Success(&data)
+	}
 
 	defer func() {
 		if x := recover(); x != nil {
@@ -24,18 +28,19 @@ func SuccessOrder() {
 		panic(err.Error())
 	}
 
-	fmt.Printf("\n1. Home\n2. Keluar\n")
-	val, _ := utils.Io("\nMasukan Input: ")
+	for {
+		fmt.Printf("\n1. Home\n2. Keluar\n")
+		val, _ := utils.Io("\nMasukan Input: ")
 
-	switch val {
-	case "1":
-		utils.ClearTerm(0, "")
-		HomeMenu(0)
-	case "2":
-		utils.ClearTerm(0, "")
-		os.Exit(0)
-	default:
-		utils.ClearTerm(1, "* INVALID_INPUT *")
-		SuccessOrder()
+		switch val {
+		case "1":
+			utils.ClearTerm(0, "")
+			HomeMenu(0)
+		case "2":
+			utils.ClearTerm(0, "")
+			os.Exit(0)
+		default:
+			utils.ClearTerm(1, "* INVALID_INPUT *")
+		}
 	}
 }

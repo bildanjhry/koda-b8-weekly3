@@ -15,14 +15,8 @@ func GetDataCart() (models.Cart, error) {
 		}
 	}()
 
-	file, err := os.ReadFile("./data/cart.json")
-	if err != nil {
-		return cart, fmt.Errorf("File tidak ditemukan")
-	}
-	errMar := json.Unmarshal([]byte(string(file)), &cart)
-	if errMar != nil {
-		panic(errMar.Error())
-	}
+	file, _ := os.ReadFile("./data/cart.json")
+	json.Unmarshal([]byte(string(file)), &cart)
 
 	return cart, nil
 }

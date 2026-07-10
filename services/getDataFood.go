@@ -2,7 +2,6 @@ package services
 
 import (
 	"encoding/json"
-	"fmt"
 	"mcd-clone/models"
 	"os"
 )
@@ -11,7 +10,6 @@ func GetDataFood() []models.Items {
 	foods := []models.Items{}
 	defer func() {
 		if x := recover(); x != nil {
-			fmt.Println(x)
 			os.Stdout.Close()
 		}
 	}()

@@ -11,7 +11,7 @@ import (
 )
 
 func ConfirmOrder(items *models.Items, ItemList *[]models.Items) {
-
+	isFound := 0
 	myCart, err := services.GetDataCart()
 	dis := ui.Display{}
 	if err != nil {
@@ -34,16 +34,29 @@ func ConfirmOrder(items *models.Items, ItemList *[]models.Items) {
 		}
 	}()
 
-	// oldVal := myCart.Products[:0]
-	// for _, val := range myCart.Products {
-	// 	if val.Id == items.Id {
-	// 		val.Qty += 1
-	// 		myCart.Products = append(oldVal, val)
-	// 		break
-	// 	}
-	// }
+	oldVal := models.ItemsCheckout{}
 
-	myCart.Products = append(myCart.Products, form)
+	remain := myCart.Products[:0]
+	for _, val := range myCart.Products {
+		if val.Id == items.Id {
+			isFound = 1
+			val.Qty += 1
+			oldVal = val
+			break
+		}
+	}
+
+	for _, val := range myCart.Products {
+		if val.Id != items.Id {
+			remain = append(remain, val)
+		}
+	}
+
+	if isFound == 0 {
+		myCart.Products = append(myCart.Products, form)
+	} else {
+		myCart.Products = append(remain, oldVal)
+	}
 	myCart.Total += items.Price
 
 	data, err := json.MarshalIndent(myCart, "", " ")

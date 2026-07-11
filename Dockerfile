@@ -7,6 +7,6 @@ RUN go build -o mcd-clone main.go
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/mcd-clone/ .
-COPY --from=builder /app/data ./data
+COPY --from=builder /app/assets/data ./data
 
 CMD ["/app/mcd-clone"]

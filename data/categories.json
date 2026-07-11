@@ -1,0 +1,26 @@
+[
+ {
+    "id":"1fo",
+    "name":"Foods"
+ },
+  {
+    "id":"2dr",
+    "name":"Drinks"
+ },
+  {
+    "id":"3sn",
+    "name":"Snacks"
+ },
+  {
+    "id":"4de",
+    "name":"Dessert"
+ },
+  {
+    "id":"5pa",
+    "name":"Paket"
+ },
+  {
+    "id":"6ha",
+    "name":"Happy Meal"
+ }
+]

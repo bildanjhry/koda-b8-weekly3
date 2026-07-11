@@ -1,7 +1,6 @@
 package cli
 
 import (
-	"fmt"
 	"mcd-clone/models"
 	"mcd-clone/ui"
 	"mcd-clone/utils"
@@ -10,11 +9,8 @@ import (
 
 func AskingItems(Items *[]models.Items) {
 	dis := ui.Display{}
-
-	fmt.Printf("Silahkan Pilih Item :\n\n")
 	dis.ItemList(Items)
 	res, _ := utils.Io("\nMasukan Input: ")
-
 	for x, val := range *Items {
 		if it := x + 1; strconv.Itoa(it) == res {
 			utils.ClearTerm(0, "")

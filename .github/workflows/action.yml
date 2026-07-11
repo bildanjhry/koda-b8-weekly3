@@ -1,0 +1,58 @@
+name : McDonalds Clone
+run-name: ${{github.actor}}'s workflows -> mcd_clone
+on :
+  push :
+    tags:
+      - "v*"
+
+permissions: 
+  contents: write
+  packages: write
+
+jobs:
+  uploads-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - name : Get Source
+        uses : actions/checkout@v6
+      
+      - name : Login GHCR
+        uses : docker/login-action@v2
+        with :
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+      
+      - name : Build docker
+        uses : docker/build-push-action@v7
+        with : 
+          context: .
+          run: docker build . -t ghcr.io/${{github.actor}}/mcd-clone:latest
+      
+      - name : Push docker image to container registry
+        uses : docker/build-push-action@v7
+        with :
+          context : .
+          run : docker push ghcr.io/${{github.actor}}/mcd-clone:latest 
+  release-binnary-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name : Get Source
+        uses : actions/checkout@v6
+
+      - name : Setup Go
+        uses : actions/setup-go@v6
+        with : 
+          go-version-file: go.mod
+      
+      - name : Install All Deps
+        run : go mod tidy
+
+      - name : Build For Linux
+        run : go build -o mcd_clone-linux-amd64
+
+      - name : Release Final app
+        uses : softprops/action-gh-release@v3
+        with :
+          file : |
+            mcd_clone-linux-amd64

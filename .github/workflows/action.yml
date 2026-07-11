@@ -4,11 +4,6 @@ on :
   push :
     tags:
       - "v*"
-
-permissions: 
-  contents: write
-  packages: write
-
 jobs:
   uploads-registry:
     runs-on: ubuntu-latest
@@ -27,18 +22,21 @@ jobs:
         uses : docker/build-push-action@v7
         with : 
           context: .
+          file: ./Dockerfile
           run: docker build . -t ghcr.io/${{github.actor}}/mcd-clone:latest
       
       - name : Push docker image to container registry
         uses : docker/build-push-action@v7
         with :
           context : .
+          file: ./Dockerfile
           run : docker push ghcr.io/${{github.actor}}/mcd-clone:latest 
+
   release-binnary-app:
     runs-on: ubuntu-latest
     steps:
       - name : Get Source
-        uses : actions/checkout@v6
+        uses : actions/checkout@v4
 
       - name : Setup Go
         uses : actions/setup-go@v6

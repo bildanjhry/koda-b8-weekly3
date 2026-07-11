@@ -85,20 +85,21 @@ func (u Display) Checkout(Items *models.Cart) {
 	fmt.Printf("\nTotal: Rp.%d\n\n", Items.Total)
 
 	fmt.Println("=======================================")
-	fmt.Printf("(1) Checkout    (2) Hapus    (3) Kembali\n")
+	fmt.Printf("(1) Checkout   (2) Hapus   (3) Kembali\n")
 }
 
 func (u Display) DecItem(Items *[]models.ItemsCheckout) {
 	fmt.Printf("Keranjang :\n\n")
 	for x, val := range *Items {
-		fmt.Printf("  %d. %s %dx", x+1, val.Name, val.Qty)
+		fmt.Printf(" (%d) %s %dx", x+1, val.Name, val.Qty)
 		if val.Size != "" {
 			fmt.Printf(", %s ", val.Size)
 		}
 		fmt.Printf("\n     Rp%d\n", val.Price)
 	}
 	fmt.Println("=======================================")
-	fmt.Printf("Pilih yang ingin dikurangi\n")
+	fmt.Printf("(0) Kembali\n\n")
+	fmt.Printf("Pilih yang ingin dikurangi")
 }
 
 func (U Display) Success(Items *models.Cart) {

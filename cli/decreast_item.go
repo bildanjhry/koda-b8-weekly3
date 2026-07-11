@@ -3,45 +3,38 @@ package cli
 import (
 	"encoding/json"
 	"mcd-clone/models"
-	"mcd-clone/services"
 	"mcd-clone/ui"
 	"mcd-clone/utils"
 	"os"
 	"strconv"
-	"sync"
 )
 
-func DecreastItem() {
+func DecreastItem(Items *models.Cart) {
 	dis := ui.Display{}
-	wg := sync.WaitGroup{}
-	cart := models.Cart{}
-
-	wg.Add(1)
-	go func() {
-		defer wg.Done()
-		cart, _ = services.GetDataCart()
-	}()
-	wg.Wait()
 
 	for {
 		utils.ClearTerm(0, "")
-		if len(cart.Products) < 1 {
+		if len(Items.Products) < 1 {
 			HomeMenu(0)
 			return
 		}
-		dis.DecItem(&cart.Products)
+		dis.DecItem(&Items.Products)
 		res, _ := utils.Io("\nMasukan Input :")
-		for x, val := range cart.Products {
+		if res == "0" {
+			utils.ClearTerm(0, "")
+			return
+		}
+		for x, val := range Items.Products {
 			if it := x + 1; strconv.Itoa(it) == res {
 				if val.Qty > 1 {
-					cart.Products[x].Qty--
+					Items.Products[x].Qty--
 				} else {
-					cart.Products = append(cart.Products[:x], cart.Products[x+1:]...)
+					Items.Products = append(Items.Products[:x], Items.Products[x+1:]...)
 				}
-				cart.Total -= val.Price
+				Items.Total -= val.Price
 			}
 		}
-		data, err := json.MarshalIndent(cart, "", " ")
+		data, err := json.MarshalIndent(Items, "", " ")
 		if err != nil {
 			panic(err.Error())
 		}

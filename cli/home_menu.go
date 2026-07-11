@@ -18,11 +18,13 @@ func AskingHome(past int) string {
 
 func HomeMenu(past int) {
 	var (
-		foods  []models.Items
-		drinks []models.Items
+		foods    []models.Items
+		drinks   []models.Items
+		snacks   []models.Items
+		desserts []models.Items
 	)
 	wg := sync.WaitGroup{}
-	wg.Add(2)
+	wg.Add(4)
 
 	go func() {
 		defer wg.Done()
@@ -32,6 +34,16 @@ func HomeMenu(past int) {
 	go func() {
 		defer wg.Done()
 		drinks = services.GetDataDrink()
+	}()
+
+	go func() {
+		defer wg.Done()
+		snacks = services.GetDataSnack()
+	}()
+
+	go func() {
+		defer wg.Done()
+		desserts = services.GetDataDessert()
 	}()
 
 	for {
@@ -47,10 +59,12 @@ func HomeMenu(past int) {
 			AskingItems(&drinks)
 
 		case "3":
-			utils.ClearTerm(1, "* WILL_AVAILABLE_SOON *")
+			utils.ClearTerm(0, "")
+			AskingItems(&snacks)
 
 		case "4":
-			utils.ClearTerm(1, "* WILL_AVAILABLE_SOON *")
+			utils.ClearTerm(0, "")
+			AskingItems(&desserts)
 
 		case "5":
 			utils.ClearTerm(1, "* WILL_AVAILABLE_SOON *")

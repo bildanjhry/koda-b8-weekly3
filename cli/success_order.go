@@ -26,7 +26,12 @@ func SuccessOrder(value *string) {
 	if *value == "1" {
 		dis.Struct(&data)
 	} else {
-		dis.Success(&data)
+		dis.QrCode()
+		_, err := utils.Io("\nTekan Enter... ")
+		if err == nil {
+			utils.ClearTerm(0, "")
+			dis.Success(&data)
+		}
 	}
 
 	defer func() {

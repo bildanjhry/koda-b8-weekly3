@@ -4,7 +4,10 @@ import (
 	"fmt"
 	"mcd-clone/models"
 	"mcd-clone/services"
+	"os"
 	"sync"
+
+	"github.com/mdp/qrterminal/v3"
 )
 
 type Display struct{}
@@ -100,6 +103,14 @@ func (u Display) DecItem(Items *[]models.ItemsCheckout) {
 	fmt.Println("=======================================")
 	fmt.Printf("(0) Kembali\n\n")
 	fmt.Printf("Pilih yang ingin dikurangi")
+}
+
+func (U Display) QrCode() {
+	qrterminal.GenerateHalfBlock(
+		"https://media1.tenor.com/m/aSkdq3IU0g0AAAAC/laughing-cat.gif",
+		qrterminal.L,
+		os.Stdout,
+	)
 }
 
 func (U Display) Success(Items *models.Cart) {

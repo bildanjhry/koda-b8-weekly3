@@ -2,15 +2,27 @@ package cli
 
 import (
 	"fmt"
+	"mcd-clone/models"
 	"mcd-clone/services"
 	"mcd-clone/ui"
 	"mcd-clone/utils"
 	"os"
+	"sync"
 )
 
 func SuccessOrder(value *string) {
 	dis := ui.Display{}
-	data, _ := services.GetDataCart()
+	wg := sync.WaitGroup{}
+	data := models.Cart{}
+
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		res, _ := services.GetDataCart()
+		data = res
+	}()
+
+	wg.Wait()
 	if *value == "1" {
 		dis.Struct(&data)
 	} else {
@@ -29,9 +41,7 @@ func SuccessOrder(value *string) {
 	}
 
 	for {
-		fmt.Printf("\n1. Home\n2. Keluar\n")
 		val, _ := utils.Io("\nMasukan Input: ")
-
 		switch val {
 		case "1":
 			utils.ClearTerm(0, "")

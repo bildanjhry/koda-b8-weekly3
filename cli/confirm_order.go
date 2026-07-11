@@ -14,6 +14,9 @@ func ConfirmOrder(items *models.Items, ItemList *[]models.Items) {
 	isFound := 0
 	myCart, err := services.GetDataCart()
 	dis := ui.Display{}
+	oldVal := models.ItemsCheckout{}
+	remain := myCart.Products[:0]
+
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -34,9 +37,6 @@ func ConfirmOrder(items *models.Items, ItemList *[]models.Items) {
 		}
 	}()
 
-	oldVal := models.ItemsCheckout{}
-
-	remain := myCart.Products[:0]
 	for _, val := range myCart.Products {
 		if val.Id == items.Id {
 			isFound = 1

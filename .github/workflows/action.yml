@@ -4,6 +4,10 @@ on :
   push :
     tags:
       - "v*"
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   uploads-registry:
     runs-on: ubuntu-latest
@@ -20,17 +24,11 @@ jobs:
       
       - name : Build docker
         uses : docker/build-push-action@v7
-        with : 
-          context: .
-          file: ./Dockerfile
-          run: docker build . -t ghcr.io/${{github.actor}}/mcd-clone:latest
+        run: docker build . -t ghcr.io/${{github.repository_owner}}/mcd-clone:latest
       
       - name : Push docker image to container registry
         uses : docker/build-push-action@v7
-        with :
-          context : .
-          file: ./Dockerfile
-          run : docker push ghcr.io/${{github.actor}}/mcd-clone:latest 
+        run : docker push ghcr.io/${{github.repository_owner}}/mcd-clone:latest 
 
   release-binnary-app:
     runs-on: ubuntu-latest
@@ -52,5 +50,5 @@ jobs:
       - name : Release Final app
         uses : softprops/action-gh-release@v3
         with :
-          file : |
+          files : |
             mcd_clone-linux-amd64

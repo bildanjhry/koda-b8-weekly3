@@ -1,24 +1,22 @@
 package cli
 
 import (
-	"fmt"
+	"mcd-clone/ui"
 	"mcd-clone/utils"
+	"time"
 )
 
 func AskingPayment() {
-
 	for {
-		fmt.Printf("Pilih Metode Pembayaran:\n\n")
-		fmt.Printf("1. Cash\n2. QRIS")
+		dis := ui.Display{}
+		dis.Payment()
 		val, _ := utils.Io("\nMasukan Input: ")
-		switch val {
-		case "1":
+		if val == "1" || val == "2" {
+			utils.ClearTerm(1, "Prosess ..")
+			time.Sleep(2 * time.Second)
 			utils.ClearTerm(0, "")
 			SuccessOrder(&val)
-		case "2":
-			utils.ClearTerm(0, "")
-			SuccessOrder(&val)
-		default:
+		} else {
 			utils.ClearTerm(1, "* INVALID_INPUT *")
 		}
 	}

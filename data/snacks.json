@@ -1,0 +1,79 @@
+[
+  {
+    "id": "1aps",
+    "name": "Apple Pie",
+    "cat": {
+      "id": "3sn",
+      "name": "snack"
+    },
+    "price": 13000,
+    "stocks":17,
+    "isPromo": 0
+  },
+  {
+    "id": "2has",
+    "name": "HashBrown",
+    "cat": {
+      "id": "3sn",
+      "name": "snack"
+    },
+    "price": 15000,
+    "stocks":27,
+    "isPromo": 0
+  },
+  {
+    "id": "3sws",
+    "name": "Sweet Corn",
+    "cat": {
+      "id": "3sn",
+      "name": "snack"
+    },
+    "stocks":67,
+    "price": 13000,
+    "isPromo": 0
+  },
+  {
+    "id": "4mcs",
+    "name": "McSpaghetti Pedas Manis",
+    "cat": {
+      "id": "3sn",
+      "name": "snack"
+    },
+    "stocks":43,
+    "price": 15000,
+    "isPromo": 0
+  },
+  {
+    "id": "5mcs",
+    "name": "McSpaghetti",
+    "cat": {
+      "id": "3sn",
+      "name": "snack"
+    },
+    "stocks":22,
+    "price": 16000,
+    "isPromo": 0
+  },
+  {
+    "id": "6mcs",
+    "name": "McNuggets 4 pcs",
+    "cat": {
+      "id":"3sn",
+      "name": "snack"
+    },
+    "stocks":44,
+    "price": 28500,
+    "isPromo": 0
+  },
+  {
+    "id": "7chs",
+    "name": "Chicken Snack Wrap",
+    "cat": {
+      "id": "3sn",
+      "name": "snack"
+    },
+    "stocks":22,
+    "price": 19500,
+    "isPromo": 0
+  }
+]

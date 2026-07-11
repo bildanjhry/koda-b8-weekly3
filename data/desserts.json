@@ -1,0 +1,57 @@
+[
+  {
+    "id": "1mcd",
+    "name": "McFlurry Feat. OREO",
+    "cat": {
+      "id": "4de",
+      "name": "desert"
+    },
+    "price": 15000,
+    "stocks":31,
+    "isPromo": 0
+  },
+  {
+    "id": "2chd",
+    "name": "Choco Sundae",
+    "cat": {
+      "id": "4de",
+      "name": "desert"
+    },
+    "price": 13000,
+    "stocks":21,    
+    "isPromo": 0
+  },
+  {
+    "id": "3mcd",
+    "name": "McFlurry Choco",
+    "cat": {
+      "id": "4de",
+      "name": "desert"
+    },
+    "price": 15000,
+    "stocks":11,    
+    "isPromo": 0
+  },
+  {
+    "id": "4std",
+    "name": "Strawberry Sundae",
+    "cat": {
+      "id": "4de",
+      "name": "desert"
+    },
+    "price": 13000,
+    "stocks":18,    
+    "isPromo": 0
+  },
+  {
+    "id": "5mcd",
+    "name": "McFlurry Matcha Choco",
+    "cat": {
+      "id": "4de",
+      "name": "desert"
+    },
+    "price": 18000,
+    "stocks":61,
+    "isPromo": 0
+  }
+]

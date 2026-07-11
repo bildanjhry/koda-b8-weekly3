@@ -3,6 +3,7 @@ package services
 import (
 	"encoding/json"
 	"fmt"
+	"mcd-clone/assets"
 	"mcd-clone/models"
 	"os"
 )
@@ -16,7 +17,7 @@ func GetDataCategory() []models.Category {
 		}
 	}()
 
-	file, err := os.ReadFile("./data/categories.json")
+	file, err := assets.FS.ReadFile("data/categories.json")
 	if err != nil {
 		panic(err.Error())
 	}

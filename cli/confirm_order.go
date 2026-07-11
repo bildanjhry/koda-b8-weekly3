@@ -64,7 +64,7 @@ func ConfirmOrder(items *models.Items, ItemList *[]models.Items) {
 		panic(err.Error())
 	}
 
-	err = os.WriteFile("./data/cart.json", data, 0644)
+	err = os.WriteFile("./cart.json", data, 0644)
 	if err != nil {
 		panic(err.Error())
 	}

@@ -39,7 +39,7 @@ func DecreastItem(Items *models.Cart) {
 			panic(err.Error())
 		}
 
-		err = os.WriteFile("./data/cart.json", data, 0644)
+		err = os.WriteFile("./assets/data/cart.json", data, 0644)
 		if err != nil {
 			panic(err.Error())
 		}

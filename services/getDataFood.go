@@ -2,6 +2,7 @@ package services
 
 import (
 	"encoding/json"
+	"mcd-clone/assets"
 	"mcd-clone/models"
 	"os"
 )
@@ -14,7 +15,7 @@ func GetDataFood() []models.Items {
 		}
 	}()
 
-	file, err := os.ReadFile("./data/foods.json")
+	file, err := assets.FS.ReadFile("data/foods.json")
 	if err != nil {
 		panic(err.Error())
 	}

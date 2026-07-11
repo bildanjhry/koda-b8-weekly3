@@ -3,6 +3,7 @@ package services
 import (
 	"encoding/json"
 	"fmt"
+	"mcd-clone/assets"
 	"mcd-clone/models"
 	"os"
 )
@@ -16,7 +17,7 @@ func GetDataDrink() []models.Items {
 		}
 	}()
 
-	file, err := os.ReadFile("./data/drinks.json")
+	file, err := assets.FS.ReadFile("data/drinks.json")
 	if err != nil {
 		panic(err.Error())
 	}

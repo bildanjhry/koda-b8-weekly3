@@ -40,7 +40,7 @@ func SuccessOrder(value *string) {
 		}
 	}()
 
-	err := os.Remove("./data/cart.json")
+	err := os.Remove("./cart.json")
 	if err != nil {
 		panic(err.Error())
 	}

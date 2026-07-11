@@ -2,6 +2,7 @@ package main
 
 import (
 	"mcd-clone/cli"
+	_ "mcd-clone/storage"
 	"mcd-clone/utils"
 )
 

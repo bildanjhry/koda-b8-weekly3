@@ -1,0 +1,53 @@
+{
+ "products": [
+  {
+   "id": "1che",
+   "name": "Cheese Burger",
+   "price": 35000,
+   "cat": {
+    "id": "1fo",
+    "name": "food"
+   },
+   "qty": 1,
+   "size": "",
+   "isPromo": 1
+  },
+  {
+   "id": "4do",
+   "name": "Double Cheese Burger",
+   "price": 34000,
+   "cat": {
+    "id": "1fo",
+    "name": "food"
+   },
+   "qty": 1,
+   "size": "",
+   "isPromo": 0
+  },
+  {
+   "id": "5mcd",
+   "name": "McFlurry Matcha Choco",
+   "price": 18000,
+   "cat": {
+    "id": "4de",
+    "name": "desert"
+   },
+   "qty": 1,
+   "size": "",
+   "isPromo": 0
+  },
+  {
+   "id": "1aps",
+   "name": "Apple Pie",
+   "price": 13000,
+   "cat": {
+    "id": "3sn",
+    "name": "snack"
+   },
+   "qty": 2,
+   "size": "",
+   "isPromo": 0
+  }
+ ],
+ "total": 113000
+}

@@ -15,7 +15,7 @@ func GetDataCart() (models.Cart, error) {
 		}
 	}()
 
-	file, _ := os.ReadFile("./data/cart.json")
+	file, _ := os.ReadFile("./cart.json")
 	json.Unmarshal([]byte(string(file)), &cart)
 
 	return cart, nil

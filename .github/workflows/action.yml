@@ -23,11 +23,9 @@ jobs:
           password: ${{secrets.GITHUB_TOKEN}}
       
       - name : Build docker
-        uses : docker/build-push-action@v7
         run: docker build . -t ghcr.io/${{github.repository_owner}}/mcd-clone:latest
       
       - name : Push docker image to container registry
-        uses : docker/build-push-action@v7
         run : docker push ghcr.io/${{github.repository_owner}}/mcd-clone:latest 
 
   release-binnary-app:

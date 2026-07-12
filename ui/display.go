@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"mcd-clone/models"
 	"mcd-clone/services"
+	"mcd-clone/utils"
 	"os"
 	"sync"
 
@@ -58,7 +59,8 @@ func (u Display) ItemList(Items *[]models.Items) {
 		if val.Size != "" {
 			fmt.Printf(", %s ", val.Size)
 		}
-		fmt.Printf("\n    Rp%d\n\n", val.Price)
+		price := utils.MoneyFormat(&val.Price)
+		fmt.Printf("\n    Rp%s\n\n", price)
 	}
 
 	fmt.Println("=======================================")
@@ -83,9 +85,11 @@ func (u Display) Checkout(Items *models.Cart) {
 		if val.Size != "" {
 			fmt.Printf(", %s ", val.Size)
 		}
-		fmt.Printf("\n     Rp%d\n", val.Price)
+		price := utils.MoneyFormat(&val.Price)
+		fmt.Printf("\n     Rp%s\n", price)
 	}
-	fmt.Printf("\nTotal: Rp.%d\n\n", Items.Total)
+	total := utils.MoneyFormat(&Items.Total)
+	fmt.Printf("\nTotal: Rp%s\n\n", total)
 
 	fmt.Println("=======================================")
 	fmt.Printf("(1) Checkout   (2) Hapus   (3) Kembali\n")
@@ -98,7 +102,8 @@ func (u Display) DecItem(Items *[]models.ItemsCheckout) {
 		if val.Size != "" {
 			fmt.Printf(", %s ", val.Size)
 		}
-		fmt.Printf("\n     Rp%d\n", val.Price)
+		price := utils.MoneyFormat(&val.Price)
+		fmt.Printf("\n     Rp%s\n", price)
 	}
 	fmt.Println("=======================================")
 	fmt.Printf("(0) Kembali\n\n")
@@ -123,9 +128,11 @@ func (U Display) Success(Items *models.Cart) {
 		if val.Size != "" {
 			fmt.Printf(", %s ", val.Size)
 		}
-		fmt.Printf("\n   Rp%d\n", val.Price)
+		price := utils.MoneyFormat(&val.Price)
+		fmt.Printf("\n   Rp%s\n", price)
 	}
-	fmt.Printf("\n\nTotal: Rp.%d\n\n", Items.Total)
+	total := utils.MoneyFormat(&Items.Total)
+	fmt.Printf("\n\nTotal: Rp%s\n\n", total)
 	fmt.Printf("---------------------------------------\n")
 	fmt.Printf("Payment Method                   QRIS\n")
 	fmt.Printf("Payment Status                   Paid\n")
@@ -147,9 +154,11 @@ func (U Display) Struct(Items *models.Cart) {
 		if val.Size != "" {
 			fmt.Printf(", %s ", val.Size)
 		}
-		fmt.Printf("\n   Rp%d\n", val.Price)
+		price := utils.MoneyFormat(&val.Price)
+		fmt.Printf("\n   Rp%s\n", price)
 	}
-	fmt.Printf("\n\nTotal: Rp.%d\n\n", Items.Total)
+	total := utils.MoneyFormat(&Items.Total)
+	fmt.Printf("\n\nTotal: Rp%s\n\n", total)
 	fmt.Printf("---------------------------------------\n")
 	fmt.Printf("Payment Method                   Cash\n")
 	fmt.Printf("Payment Status                   Unpaid\n")

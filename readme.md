@@ -15,8 +15,8 @@ Program clone McDonalds menggunakan GO sebagai bahasa pemogramannya, dimana prog
 - PIlih opsi checkout Cash/Qris
 
 ### Binary App (Linux) 
-v1.0.9 :
-[mcd_clone-linux-amd64](https://github.com/bildanjhry/koda-b8-weekly3/releases/download/v1.0.9/mcd_clone-linux-amd64)
+v1.0.10 :
+[mcd_clone-linux-amd64](https://github.com/bildanjhry/koda-b8-weekly3/releases/download/v1.0.10/mcd_clone-linux-amd64)
 
 ### Ubah permission:
 ```shell
@@ -32,4 +32,4 @@ chmod +x ./mcd_clone-linux-amd64
 - mdp/qrterminal v3.2.1
 - Docker v29.6.1
 
-### v1.0.9 (Latest)
+### v1.0.10 (Latest)
